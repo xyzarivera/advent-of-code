@@ -7,15 +7,12 @@
 
 const { txtToString } = require("../../utils");
 
-// TODO: improve path
-const string = txtToString("index.txt");
-
-const data = string.split("\n");
-
-function getCalories(arr) {
+function getCalories(path) {
+  const string = txtToString(__dirname + path);
+  const data = string.split("\n");
   let calories = [0];
   let i = 0;
-  arr.forEach((element) => {
+  data.forEach((element) => {
     const num = parseInt(element);
     if (Number.isNaN(num)) {
       i++;
@@ -36,7 +33,7 @@ function totalTopThreeCalories(calArr) {
   return sorted[0] + sorted[1] + sorted[2];
 }
 
-const calories = getCalories(data);
+const calories = getCalories("/input.txt");
 
 console.log(maxCalorieCount(calories));
 console.log(totalTopThreeCalories(calories));
