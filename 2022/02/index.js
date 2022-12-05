@@ -3,7 +3,7 @@
  *
  */
 
-const { txtToString } = require("../../utils");
+const { textFileToString } = require("../../utils");
 
 const rock = 1;
 const paper = 2;
@@ -63,7 +63,7 @@ const scoreTable = { A, B, C, X, Y, Z };
 // paper > rock > scissors > paper
 
 function getMyScore1(path) {
-  const string = txtToString(__dirname + path);
+  const string = textFileToString(__dirname + path);
   const data = string.split("\n");
   return data.reduce((acc, curr) => {
     if (!curr) {
@@ -74,7 +74,7 @@ function getMyScore1(path) {
 }
 
 function getMyScore2(path) {
-  const string = txtToString(__dirname + path);
+  const string = textFileToString(__dirname + path);
   const data = string.split("\n");
   return data.reduce((acc, curr) => {
     if (!curr) {

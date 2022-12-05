@@ -5,10 +5,10 @@
  * output: number of calories the elf with most calories have
  */
 
-const { txtToString } = require("../../utils");
+const { textFileToString } = require("../../utils");
 
 function getCalories(path) {
-  const string = txtToString(__dirname + path);
+  const string = textFileToString(__dirname + path);
   const data = string.split("\n");
   let calories = [0];
   let i = 0;
